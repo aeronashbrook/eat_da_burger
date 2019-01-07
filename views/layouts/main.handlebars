@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Eat Da Burger</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+ {{{ body }}}
+</body>
+<style>
+body {
+    background-color: #f4d54b;
+}
+#image {
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+}
+#form {
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;    
+}
+#formdiv {
+    width: 330px;
+    margin-left: auto;
+    margin-right: auto;  
+}
+#input {
+    height: 35px;
+    width: 300px;
+}
+#submit {
+    margin-left: 110px;
+}
+#container {
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#uneaten {
+    width: 400px;
+    float: left;
+    height: 200px;
+    text-align: center;
+}
+#eaten {
+    width: 400px;
+    float: left;
+    text-align: center;
+    height: 200px;
+
+}
+</style>
+<script>
+  $(document).ready(function () {  
+        $(".create-update-form").on("submit", function (event) {
+            event.preventDefault();
+            var newBurger = {
+                burger_name: $("#input").val().trim()
+            };
+            console.log(newBurger)
+            $.ajax("/api/burgers", {
+                type: "POST",
+                data: newBurger
+            }).then(
+                function () {
+                    location.reload();
+                });
+        });
+
+        $(".devour").on("click", function(event) {
+            var id = $(this).data("id");
+            const devoured = {
+                devoured: 1
+            };
+            $.ajax("/api/burgers/" + id, {
+                type: "PUT",
+                data: devoured
+            }).then(
+                function() {
+                    location.reload();
+                });
+        });
+    });
+</script>
+</html>

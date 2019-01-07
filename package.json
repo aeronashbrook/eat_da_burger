@@ -1,0 +1,24 @@
+{
+  "name": "eat_da_burger",
+  "version": "1.0.0",
+  "description": "A full stack app that uses Node, Express, Handlebars, and an ORM to log eaten and uneaten burgers.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aeronashbrook/eat_da_burger.git"
+  },
+  "author": "Aeron Ashbrook",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aeronashbrook/eat_da_burger/issues"
+  },
+  "homepage": "https://github.com/aeronashbrook/eat_da_burger#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.0",
+    "mysql": "^2.16.0"
+  }
+}
