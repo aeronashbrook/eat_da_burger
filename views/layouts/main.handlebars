@@ -54,6 +54,9 @@ body {
     height: 200px;
 
 }
+#devour {
+    margin-left: 10px;
+}
 </style>
 <script>
   $(document).ready(function () {  
@@ -73,8 +76,9 @@ body {
         });
 
         $(".devour").on("click", function(event) {
+            event.preventDefault();
             var id = $(this).data("id");
-            const devoured = {
+            var devoured = {
                 devoured: 1
             };
             $.ajax("/api/burgers/" + id, {

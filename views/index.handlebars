@@ -18,6 +18,8 @@
                 {{#unless this.devoured}}
                 <li>
                     <strong>{{this.burger_name}}</strong>
+                    {{> devour/devourbutton}}
+                    <br><br>
                 </li>
                 {{/unless}}
                 {{/each }}
@@ -30,6 +32,7 @@
             {{#if this.devoured}}
             <li>
                 <strong>{{this.burger_name}}</strong>
+                <br><br>
             </li>
             {{/if}}
             {{/each }}
